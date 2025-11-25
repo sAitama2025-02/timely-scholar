@@ -12,13 +12,27 @@ LOCATION = os.getenv("GCP_REGION", "asia-south1")  # e.g. asia-south1
 
 app = FastAPI()
 
+# FIXED CORS - Option 1: Remove credentials (simpler, works for most cases)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # for hackathon: allow all origins
-    allow_credentials=True,
+    allow_origins=["*"],  # Allow all origins
+    allow_credentials=False,  # CHANGED: Must be False with wildcard origins
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# OR Option 2: Specify exact origins (more secure, use if you need credentials)
+# app.add_middleware(
+#     CORSMiddleware,
+#     allow_origins=[
+#         "https://timely-scholar.web.app",
+#         "https://timely-scholar.firebaseapp.com",
+#         "http://localhost:3000",  # for local dev
+#     ],
+#     allow_credentials=True,
+#     allow_methods=["*"],
+#     allow_headers=["*"],
+# )
 
 class Subject(BaseModel):
     name: str
@@ -26,22 +40,17 @@ class Subject(BaseModel):
     total: int
     target_attendance: Optional[int] = 75
 
-
 class SuggestRequest(BaseModel):
     subjects: List[Subject]
-
 
 class SuggestResponse(BaseModel):
     suggestion: str
 
-
 def call_gemini(prompt: str) -> str:
     vertexai.init(project=PROJECT_ID, location=LOCATION)
-    # Try latest Gemini Flash model. If it causes deploy error, switch to "gemini-1.5-flash".
-    model = GenerativeModel("gemini-2.5-flash")
+    model = GenerativeModel("gemini-1.5-flash")  # Use stable model
     resp = model.generate_content(prompt)
     return getattr(resp, "text", str(resp))
-
 
 @app.post("/suggest", response_model=SuggestResponse)
 def suggest_plan(body: SuggestRequest):
@@ -50,7 +59,6 @@ def suggest_plan(body: SuggestRequest):
         lines.append(
             f"{s.name}: attended={s.attended}, total={s.total}, target={s.target_attendance}%"
         )
-
     prompt = (
         "You are an assistant helping a student plan class attendance and study schedule.\n"
         "Given these subjects with attendance stats, suggest:\n"
@@ -59,7 +67,6 @@ def suggest_plan(body: SuggestRequest):
         "3) Any warnings about low attendance.\n\n"
         "Subjects:\n" + "\n".join(lines)
     )
-
     try:
         suggestion = call_gemini(prompt)
     except Exception as e:
@@ -67,9 +74,7 @@ def suggest_plan(body: SuggestRequest):
             f"(Gemini error: {e}) Based on the data, focus more on subjects with "
             "the lowest attendance percentage and plan extra study sessions for them."
         )
-
     return SuggestResponse(suggestion=suggestion)
-
 
 @app.get("/")
 def health():
