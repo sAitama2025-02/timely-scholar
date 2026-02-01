@@ -13,7 +13,7 @@ This project was built during Google’s Build & Blog Marathon 2025.
  
 Live App: https://timely-scholar.web.app  
 
-Source Code: https://github.com/sAitama2025-02/timely-scholar 
+Source Code: https://github.com/sAitama2025-02/timely-scholar  
 
 🔐 Authentication + Personal Data
 
