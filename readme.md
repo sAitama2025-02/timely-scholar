@@ -6,7 +6,7 @@ College students often struggle to track class attendance accurately and end up 
 Timely Scholar solves this problem by allowing students to :-  
   
 ✔ Sign in securely with Google  
-✔ Add their subjects 
+✔ Add their subjects  
 ✔ Track progress visually with attendance status coming soon 
  
 This project was built during Google’s Build & Blog Marathon 2025.   
