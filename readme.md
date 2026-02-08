@@ -8,7 +8,7 @@ Timely Scholar solves this problem by allowing students to :-
 ✔ Sign in securely with Google  
 ✔ Add their subjects  
 ✔ Track progress visually with attendance status coming soon 
- 
+  
 This project was built during Google’s Build & Blog Marathon 2025.   
  
 Live App: https://timely-scholar.web.app   
