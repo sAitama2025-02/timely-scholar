@@ -27,7 +27,7 @@ Add Subjects	✅ Working
 Save to Firestore	⚠️ Partial (works after refresh)
 Present / Absent Updates	🚧 In Progress
 Remove Subjects	🚧 In Progress
-AI Suggestion	🚧 Planned
+AI Suggestion	🚧 Planned 
 
 Users can add multiple subjects with no technical knowledge required.
 
