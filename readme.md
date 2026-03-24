@@ -21,7 +21,7 @@ Timely Scholar uses Firebase Authentication with Google sign-in.
 Every user gets a personalized dashboard where subjects added are stored just for them.
  
 📝 Current Working Features  
-Feature	Status   
+Feature	Status    
 Google Login	✅ Working
 Add Subjects	✅ Working
 Save to Firestore	⚠️ Partial (works after refresh)
