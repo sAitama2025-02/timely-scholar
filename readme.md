@@ -1,7 +1,7 @@
 Timely Scholar – A Simple AI-Ready Attendance Tracker for Students.
    
 🚀 Overview      
-    
+     
 College students often struggle to track class attendance accurately and end up getting short on the minimum attendance requirement.   
 Timely Scholar solves this problem by allowing students to :-    
   
