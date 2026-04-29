@@ -22,7 +22,7 @@ Every user gets a personalized dashboard where subjects added are stored just fo
  
 📝 Current Working Features    
 Feature	Status    
-Google Login	✅ Working 
+Google Login	✅ Working  
 Add Subjects	✅ Working 
 Save to Firestore	⚠️ Partial (works after refresh)
 Present / Absent Updates	🚧 In Progress
