@@ -1,4 +1,4 @@
-Timely Scholar – A Simple AI-Ready Attendance Tracker for Students. 
+Timely Scholar – A Simple AI-Ready Attendance Tracker for Students.  
        
 🚀 Overview  
       
