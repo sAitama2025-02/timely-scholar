@@ -19,7 +19,7 @@ Source Code:    https://github.com/sAitama2025-02/timely-scholar
 🔐 Authentication + Personal Data 
 
 Timely Scholar uses Firebase Authentication with Google sign-in. 
-Every user gets a personalized dashboard where subjects added are stored just for them.
+Every user gets a personalized dashboard where subjects added are stored just for them. 
  
 📝 Current Working Features      
 Feature	Status    
