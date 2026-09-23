@@ -31,7 +31,7 @@ Remove Subjects	🚧 In Progress
 AI Suggestion	🚧 Planned 
 
 Users can add multiple subjects with no technical knowledge required.
-
+ 
 🧱 Architecture Used
 Area	Technology
 Frontend	Next.js + TypeScript
